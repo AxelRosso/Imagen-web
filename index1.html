@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Mascotas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 0.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5em 1em;
+            margin: 0 0.25em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        main {
+            padding: 1em;
+            position: relative;
+        }
+
+        .card-container {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .card {
+            width: 280px;
+            height: 380px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px #aaa;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card p {
+            text-align: justify;
+            font-size: 18px;
+        }
+
+        .navigation-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #333;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Refugio de mascotas</h1>
+        <p>Bienvenido a nuestro sitio web, donde podrás encontrar a tu compañero ideal.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="adopciones.html">Adopciones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="como-ayudar.html">Cómo ayudar</a></li>
+            <li><a href="educacion.html">Educación</a></li>
+            <li><a href="historias-de-rescate.html">Historias de rescate</a></li>
+            <li><a href="eventos-y-noticias.html">Eventos y noticias</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <button class="navigation-btn prev-btn" onclick="scrollCards(-1)">❮</button>
+        <div class="card-container" id="cardContainer">
+            <div class="card">
+                <img src="fido.jpg" alt="Fido">
+                <h3>Fido</h3>
+                <p>Es un perro mestizo de 2 años, muy cariñoso y juguetón. Le encanta correr y saltar. Busca una familia que lo quiera y lo cuide.</p>
+            </div>
+            <div class="card">
+                <img src="luna.jpg" alt="Luna">
+                <h3>Luna</h3>
+                <p>Es una gata siamesa de 1 año, muy inteligente y curiosa. Le gusta explorar y trepar. Busca una familia que le dé mucho amor y atención.</p>
+            </div>
+            <!-- Aquí puedes agregar más tarjetas con otras mascotas -->
+            <!-- Tarjeta 3 -->
+            <div class="card">
+                <img src="tarjeta3.jpg" alt="Mascota 3">
+                <h3>Mascota 3</h3>
+                <p>Descripción de la mascota 3.</p>
+            </div>
+            <!-- Tarjeta 4 -->
+            <div class="card">
+                <img src="tarjeta4.jpg" alt="Mascota 4">
+                <h3>Mascota 4</h3>
+                <p>Descripción de la mascota 4.</p>
+            </div>
+            <!-- Tarjeta 5 -->
+            <div class="card">
+                <img src="tarjeta5.jpg" alt="Mascota 5">
+                <h3>Mascota 5</h3>
+                <p>Descripción de la mascota 5.</p>
+            </div>
+            <!-- Tarjeta 6 -->
+            <div class="card">
+                <img src="tarjeta6.jpg" alt="Mascota 6">
+                <h3>Mascota 6</h3>
+                <p>Descripción de la mascota 6.</p>
+            </div>
+            <!-- Tarjeta 7 -->
+            <div class="card">
+                <img src="tarjeta6.jpg" alt="Mascota 7">
+                <h3>Mascota 7</h3>
+                <p>Descripción de la mascota 7.</p>
+            </div>
+            <!-- Tarjeta 8 -->
+            <div class="card">
+                <img src="tarjeta6.jpg" alt="Mascota 8">
+                <h3>Mascota 8</h3>
+                <p>Descripción de la mascota 8.</p>
+            </div>
+        </div>
+        <button class="navigation-btn next-btn" onclick="scrollCards(1)">❯</button>
+    </main>
+    <footer>
+        <p>Refugio de mascotas © 2023. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <!-- Aquí puedes agregar el código HTML para mostrar los iconos y los enlaces a las redes sociales -->
+    </footer>
+
+    <script>
+        const cardContainer = document.getElementById('cardContainer');
+
+        function scrollCards(direction) {
+            cardContainer.scrollLeft += direction * 320; // Ajusta el valor según el ancho de las tarjetas y el espacio entre ellas
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowLeft') {
+                scrollCards(-0.03);
+            } else if (event.key === 'ArrowRight') {
+                scrollCards(0.03);
+            }
+        });
+    </script>
+</body>
+</html>
